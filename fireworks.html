@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fireworks.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="firework" id="firework1">
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+        <div class="explosion"></div>
+    </div>
+    <div class="firework" id="firework2">
+        <div class="explosion1"></div>
+        <div class="explosion1"></div>
+        <div class="explosion1"></div>
+        <div class="explosion1"></div>
+        <div class="explosion1"></div>
+        <div class="explosion1"></div>
+        <div class="explosion1"></div>
+        <div class="explosion1"></div>
+        <div class="explosion1"></div>
+        <div class="explosion1"></div>
+        <div class="explosion1"></div>
+        <div class="explosion1"></div>
+    </div>
+    <div class="firework" id="firework3">
+        <div class="explosion2"></div>
+        <div class="explosion2"></div>
+        <div class="explosion2"></div>
+        <div class="explosion2"></div>
+        <div class="explosion2"></div>
+        <div class="explosion2"></div>
+        <div class="explosion2"></div>
+        <div class="explosion2"></div>
+        <div class="explosion2"></div>
+        <div class="explosion2"></div>
+        <div class="explosion2"></div>
+        <div class="explosion2"></div>
+    </div>
+    <div >
+        <audio>
+            <source src="media/Katy Perry - Firework (Official Music Video).mp3" type="audio/ogg">
+            <source src="media/Katy Perry - Firework (Official Music Video).mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        const root = document.querySelector(":root"); //grabbing the root element
+        var randomColor1;
+        var randomColor2;
+        var randomColor3;
+
+        var explosion = document.querySelector('.explosion');
+        var explosions = document.getElementsByClassName('explosion:before')
+        explosion.addEventListener('animationiteration', () => {
+            randomColor1 = Math.floor(Math.random() * 16777215).toString(16);
+            randomColor2 = Math.floor(Math.random() * 16777215).toString(16);
+            randomColor3 = Math.floor(Math.random() * 16777215).toString(16);
+            root.style.setProperty("--fireworkBackground1", '#' + randomColor1);
+            root.style.setProperty("--fireworkBackground2", '#' + randomColor2);
+            root.style.setProperty("--fireworkBackground3", '#' + randomColor3);
+
+        });
+
+    </script>
+
+</body>
+
+</html>
